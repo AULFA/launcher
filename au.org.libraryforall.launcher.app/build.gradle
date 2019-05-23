@@ -1,0 +1,8 @@
+dependencies {
+  implementation libraries.kotlinStdlib
+  implementation libraries.rXJava
+  implementation libraries.androidXAppCompat
+  implementation libraries.androidXActivity
+  implementation libraries.androidXCore
+  implementation libraries.androidMaterial
+}

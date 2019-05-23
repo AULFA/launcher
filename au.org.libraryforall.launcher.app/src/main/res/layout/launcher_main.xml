@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent">
+
+  <ImageView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_centerInParent="true"
+    android:alpha=".1"
+    android:focusable="false"
+    android:scaleX="1.5"
+    android:scaleY="2.5"
+    android:src="@drawable/books" />
+
+  <RelativeLayout
+    android:id="@+id/spacerTop"
+    android:background="@color/mainColor"
+    android:layout_width="match_parent"
+    android:layout_height="80dp">
+    <View
+      android:background="@color/mainColorLighter"
+      android:layout_alignParentBottom="true"
+      android:layout_width="match_parent"
+      android:layout_height="8dp"/>
+  </RelativeLayout>
+
+  <RelativeLayout
+    android:id="@+id/spacerBottom"
+    android:background="@color/mainColor"
+    android:layout_alignParentBottom="true"
+    android:layout_width="match_parent"
+    android:layout_height="80dp">
+
+    <View
+      android:background="@color/mainColorLighter"
+      android:layout_alignParentTop="true"
+      android:layout_width="match_parent"
+      android:layout_height="8dp"/>
+
+    <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_margin="16dp"
+      android:layout_alignParentBottom="true"
+      android:textColor="@color/mainColorLighter"
+      android:text="LFA Launcher" />
+
+    <ImageView
+      android:id="@+id/settings"
+      android:layout_width="48dp"
+      android:layout_height="48dp"
+      android:tint="@color/mainColorLighter"
+      android:layout_alignParentBottom="true"
+      android:layout_alignParentRight="true"
+      android:layout_marginBottom="8dp"
+      android:layout_marginRight="8dp"
+      android:src="@drawable/settings"/>
+
+  </RelativeLayout>
+
+  <RelativeLayout
+    android:id="@+id/mainArea"
+    android:layout_below="@id/spacerTop"
+    android:layout_above="@id/spacerBottom"
+    android:layout_margin="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+      android:id="@+id/lfaLayout"
+      android:layout_centerHorizontal="true"
+      android:layout_centerVertical="true"
+      android:translationX="-64dp"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content">
+
+      <View
+        android:id="@+id/lfaShadow"
+        android:layout_width="68dp"
+        android:layout_height="92dp"
+        android:background="#000000"
+        android:translationY="4dp"
+        android:translationX="4dp"
+        android:alpha=".3"/>
+
+      <ImageView
+        android:id="@+id/lfaButton"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:src="@drawable/lfa" />
+
+      <TextView
+        android:id="@+id/lfaText"
+        android:layout_width="64dp"
+        android:layout_height="24dp"
+        android:layout_below="@id/lfaButton"
+        android:layout_alignLeft="@id/lfaButton"
+        android:background="@color/mainColor"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+        android:text="LFA"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+      android:id="@+id/lfaOfflineLayout"
+      android:layout_centerHorizontal="true"
+      android:layout_centerVertical="true"
+      android:translationX="0dp"
+      android:layout_toRightOf="@id/lfaLayout"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content">
+
+      <View
+        android:id="@+id/lfaOfflineShadow"
+        android:layout_width="68dp"
+        android:layout_height="92dp"
+        android:background="#000000"
+        android:translationY="4dp"
+        android:translationX="4dp"
+        android:alpha=".3"/>
+
+      <ImageView
+        android:id="@+id/lfaOfflineButton"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:src="@drawable/lfa" />
+
+      <TextView
+        android:id="@+id/lfaOfflineText"
+        android:layout_width="64dp"
+        android:layout_height="24dp"
+        android:layout_below="@id/lfaOfflineButton"
+        android:layout_alignLeft="@id/lfaOfflineButton"
+        android:background="@color/mainColor"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+        android:text="Offline"/>
+    </RelativeLayout>
+
+  </RelativeLayout>
+
+
+</RelativeLayout>

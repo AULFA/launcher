@@ -3,7 +3,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
   package="au.org.libraryforall.launcher.app">
 
-  <application>
+  <application android:name="au.org.libraryforall.launcher.app.LauncherApplication">
     <activity
       android:name="au.org.libraryforall.launcher.app.LauncherActivity"
       android:exported="true"

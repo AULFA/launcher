@@ -1,8 +1,36 @@
 dependencies {
+  implementation project(":au.org.libraryforall.launcher.installed")
+  implementation project(":au.org.libraryforall.launcher.installed.api")
+
+  implementation libraries.androidMaterial
+  implementation libraries.androidXActivity
+  implementation libraries.androidXAppCompat
+  implementation libraries.androidXCore
+  implementation libraries.androidXConstraintLayout
+  implementation libraries.conductor
+  implementation libraries.googleGuava
   implementation libraries.kotlinStdlib
   implementation libraries.rXJava
-  implementation libraries.androidXAppCompat
-  implementation libraries.androidXActivity
-  implementation libraries.androidXCore
-  implementation libraries.androidMaterial
+  implementation libraries.slf4j
+}
+
+def loadPassword(project) {
+  def propsFile = file("password.properties").absoluteFile
+  def Properties props = new Properties()
+
+  if (propsFile.canRead()) {
+    props.load(new FileInputStream(propsFile))
+    return props['password']
+  } else {
+    throw new FileNotFoundException("Could not read ${propsFile}")
+  }
+}
+
+android {
+
+  def password = loadPassword()
+
+  defaultConfig {
+    buildConfigField "String", "SETTINGS_PASSWORD", "\"${password}\""
+  }
 }

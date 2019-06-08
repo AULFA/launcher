@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<resources>
+  <string-array name="launcherPackageWhitelist">
+    <item>au.org.libraryforall.reader</item>
+    <item>au.org.libraryforall.reader.offline</item>
+  </string-array>
+  <string name="launcherTitleLocked">Select An Application</string>
+  <string name="launcherTitleUnlocked">Unlocked Package List</string>
+</resources>

@@ -51,7 +51,8 @@ class LauncherAppListAdapter(
     holder.icon.setImageDrawable(this.iconCache.get(item.id) { loadIcon(item) })
 
     if (this.showPackageId) {
-      holder.packageId.text = item.id
+      holder.packageId.text =
+        String.format("%s %s (%d)", item.id, item.versionName, item.versionCode)
       holder.packageId.visibility = View.VISIBLE
     } else {
       holder.packageId.visibility = View.INVISIBLE

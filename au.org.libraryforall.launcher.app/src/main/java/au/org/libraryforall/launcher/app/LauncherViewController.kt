@@ -29,6 +29,13 @@ class LauncherViewController(arguments: Bundle) : Controller(arguments) {
     }
   }
 
+  override fun handleBack(): Boolean {
+    if (this.parameters.unlocked) {
+      return false
+    }
+    return true
+  }
+
   private var installedPackageEvents: Disposable? = null
   private val applicationList: MutableList<InstalledPackage> = mutableListOf()
 

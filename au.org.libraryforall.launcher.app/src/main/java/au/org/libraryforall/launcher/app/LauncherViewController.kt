@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.SimpleItemAnimator
@@ -78,7 +79,7 @@ class LauncherViewController(arguments: Bundle) : Controller(arguments) {
         showPackageId = this.parameters.unlocked)
 
     this.recyclerView.setHasFixedSize(true)
-    this.recyclerView.layoutManager = LinearLayoutManager(view.context);
+    this.recyclerView.layoutManager = GridLayoutManager(view.context, 2)
     this.recyclerView.adapter = this.listAdapter
     (this.recyclerView.itemAnimator as SimpleItemAnimator).supportsChangeAnimations = false
 

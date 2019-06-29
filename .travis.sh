@@ -12,6 +12,8 @@ then
   exit 1
 fi
 
+#------------------------------------------------------------------------
+# Configure SSH
 
 mkdir -p "${HOME}/.ssh" || exit 1
 echo "${LFA_BUILDS_SSH_KEY}" | base64 -d > "${HOME}/.ssh/id_ed25519" || exit 1
@@ -23,10 +25,18 @@ chmod 600 "${HOME}/.ssh/id_ed25519" || exit 1
 EOF
 ) >> "$HOME/.ssh/known_hosts" || exit 1
 
+#------------------------------------------------------------------------
+# Configure password
+
 (cat <<EOF
 password = ${LFA_LAUNCHER_PASSWORD}
 EOF
 ) >> ./au.org.libraryforall.launcher.app/password.properties || exit 1
+
+#------------------------------------------------------------------------
+# Configure Nexus and keystore
+
+scp -P 1022 travis-ci@builds.lfa.one:lfa-keystore.jks .
 
 (cat <<EOF
 
@@ -35,6 +45,12 @@ nexusPassword = notapassword
 EOF
 ) >> gradle.properties || exit 1
 
+#------------------------------------------------------------------------
+# Build!
+
 ./gradlew clean assemble test || exit 1
 
-scp -P 1022 -v -v ./au.org.libraryforall.launcher.app/build/outputs/apk/debug/*.apk travis-ci@builds.lfa.one:/sites/builds.lfa.one/apk/ || exit 1
+#------------------------------------------------------------------------
+# Publish APKs
+
+scp -P 1022 -v ./au.org.libraryforall.launcher.app/build/outputs/apk/release/*.apk travis-ci@builds.lfa.one:/sites/builds.lfa.one/apk/ || exit 1

@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import au.org.libraryforall.launcher.installed.api.InstalledPackage
 import com.google.common.cache.CacheBuilder
@@ -25,6 +26,9 @@ class LauncherAppListAdapter(
       .concurrencyLevel(2)
       .maximumSize(10)
       .build<String, Drawable>()
+
+  private val fallback =
+    ContextCompat.getDrawable(this.context, R.drawable.lfa_unknown)
 
   override fun onCreateViewHolder(
     parent: ViewGroup,
@@ -61,9 +65,9 @@ class LauncherAppListAdapter(
 
   private fun loadIcon(item: InstalledPackage): Drawable? {
     return try {
-      return this.packageManager.getApplicationIcon(item.id)
+      this.packageManager.getApplicationIcon(item.id)
     } catch (e: Exception) {
-      null
+      this.fallback
     }
   }
 

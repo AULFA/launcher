@@ -2,8 +2,10 @@
 <resources>
   <string name="launcherAppName">LFA Launcher</string>
   <string-array name="launcherPackageWhitelist">
-    <item>au.org.libraryforall.reader</item>
+    <item>au.org.libraryforall.reader.laos</item>
     <item>au.org.libraryforall.reader.offline</item>
+    <item>au.org.libraryforall.reader</item>
+    <item>au.org.libraryforall.updater.app</item>
   </string-array>
   <string name="launcherTitleLocked">Select An Application</string>
   <string name="launcherTitleUnlocked">Unlocked Application List</string>

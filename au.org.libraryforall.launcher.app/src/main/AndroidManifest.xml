@@ -5,7 +5,7 @@
 
   <application
     android:label="@string/launcherAppName"
-    android:icon="@drawable/lfa_launcher"
+    android:icon="@mipmap/ic_launcher"
     android:name="au.org.libraryforall.launcher.app.LauncherApplication">
     <activity
       android:name="au.org.libraryforall.launcher.app.LauncherActivity"

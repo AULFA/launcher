@@ -42,7 +42,7 @@ EOF
 #------------------------------------------------------------------------
 # Configure Nexus and keystore
 
-scp -P 1022 travis-ci@builds.lfa.one:lfa-keystore.jks .
+scp -B -P 1022 travis-ci@builds.lfa.one:lfa-keystore.jks .
 
 (cat <<EOF
 
@@ -58,9 +58,9 @@ EOF
 #------------------------------------------------------------------------
 # Build!
 
-./gradlew clean assemble test || exit 1
+./gradlew clean assembleRelease test || exit 1
 
 #------------------------------------------------------------------------
 # Publish APKs
 
-scp -P 1022 -v ./au.org.libraryforall.launcher.app/build/outputs/apk/release/*.apk travis-ci@builds.lfa.one:/sites/builds.lfa.one/apk/ || exit 1
+scp -B -P 1022 -v ./au.org.libraryforall.launcher.app/build/outputs/apk/release/*.apk travis-ci@builds.lfa.one:/repository/testing/all/ || exit 1

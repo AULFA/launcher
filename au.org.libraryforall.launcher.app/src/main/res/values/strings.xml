@@ -2,11 +2,12 @@
 <resources>
   <string name="launcherAppName">LFA Launcher</string>
   <string-array name="launcherPackageWhitelist">
-    <item>one.lfa.android.laos</item>
-    <item>one.lfa.android.grande</item>
     <item>au.org.libraryforall.reader.offline</item>
     <item>au.org.libraryforall.reader</item>
     <item>au.org.libraryforall.updater.app</item>
+    <item>one.lfa.android.grande</item>
+    <item>one.lfa.android.laos</item>
+    <item>one.lfa.android.timor</item>
   </string-array>
   <string name="launcherTitleLocked">Select An Application</string>
   <string name="launcherTitleUnlocked">Unlocked Application List</string>

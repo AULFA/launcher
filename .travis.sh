@@ -63,7 +63,7 @@ EOF
 #------------------------------------------------------------------------
 # Publish APKs
 
-APK_FILES=$(find . -name '*-release-*.apk') || exit 1
+APK_FILES=$(find . -name '*-release.apk') || exit 1
 
 if [ -z "${APK_FILES}" ]
 then

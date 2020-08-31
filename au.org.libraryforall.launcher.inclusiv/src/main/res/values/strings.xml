@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<resources>
+  <string-array name="launcherPackageWhitelist">
+    <item>au.org.libraryforall.reader.offline</item>
+    <item>au.org.libraryforall.reader</item>
+    <item>au.org.libraryforall.updater.app</item>
+    <item>com.aofl.readingiq.google</item>
+    <item>one.lfa.android.grande</item>
+    <item>one.lfa.android.laos</item>
+    <item>one.lfa.android.timor</item>
+    <item>org.sil.bloom.reader</item>
+  </string-array>
+</resources>

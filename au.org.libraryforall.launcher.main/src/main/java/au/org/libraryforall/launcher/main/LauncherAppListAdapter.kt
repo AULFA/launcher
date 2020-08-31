@@ -1,4 +1,4 @@
-package au.org.libraryforall.launcher.app
+package au.org.libraryforall.launcher.main
 
 import android.app.Activity
 import android.graphics.drawable.Drawable
@@ -11,7 +11,6 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import au.org.libraryforall.launcher.installed.api.InstalledPackage
 import com.google.common.cache.CacheBuilder
-import java.util.concurrent.Callable
 
 class LauncherAppListAdapter(
   private val context: Activity,

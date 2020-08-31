@@ -1,3 +1,4 @@
 include ':au.org.libraryforall.launcher.app'
-include ':au.org.libraryforall.launcher.installed.api'
 include ':au.org.libraryforall.launcher.installed'
+include ':au.org.libraryforall.launcher.installed.api'
+include ':au.org.libraryforall.launcher.main'

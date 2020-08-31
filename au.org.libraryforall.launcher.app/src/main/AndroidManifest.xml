@@ -6,9 +6,9 @@
   <application
     android:label="@string/launcherAppName"
     android:icon="@mipmap/ic_launcher"
-    android:name="au.org.libraryforall.launcher.app.LauncherApplication">
+    android:name="au.org.libraryforall.launcher.main.LauncherApplication">
     <activity
-      android:name="au.org.libraryforall.launcher.app.LauncherActivity"
+      android:name="au.org.libraryforall.launcher.main.LauncherActivity"
       android:exported="true"
       android:theme="@style/LauncherTheme">
       <intent-filter>

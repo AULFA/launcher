@@ -1,4 +1,4 @@
-package au.org.libraryforall.launcher.app
+package au.org.libraryforall.launcher.main
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -36,16 +36,16 @@ object LauncherMainServices {
   private lateinit var context: Context
 
   private val installedPackagesReference: AtomicService<InstalledPackagesType> =
-    AtomicService { InstalledPackages.create(this.context) }
+    AtomicService { InstalledPackages.create(context) }
 
   private val packageFilterReference: AtomicService<LauncherPackageFilterType> =
-    AtomicService { LauncherPackageFilter(this.context) }
+    AtomicService { LauncherPackageFilter(context) }
 
   fun packageFilter(): LauncherPackageFilterType =
-    this.packageFilterReference.get()
+    packageFilterReference.get()
 
   fun installedPackages(): InstalledPackagesType =
-    this.installedPackagesReference.get()
+    installedPackagesReference.get()
 
   fun initialize(context: Context) {
     LauncherMainServices.context = context

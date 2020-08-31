@@ -37,7 +37,7 @@ EOF
 (cat <<EOF
 password = ${LFA_LAUNCHER_PASSWORD}
 EOF
-) >> ./au.org.libraryforall.launcher.app/password.properties || exit 1
+) >> ./au.org.libraryforall.launcher.main/password.properties || exit 1
 
 #------------------------------------------------------------------------
 # Configure Nexus and keystore
@@ -63,4 +63,6 @@ EOF
 #------------------------------------------------------------------------
 # Publish APKs
 
-scp -B -P 1022 -v ./au.org.libraryforall.launcher.app/build/outputs/apk/release/*.apk travis-ci@builds.lfa.one:/repository/testing/all/ || exit 1
+APK_FILES=$(find . -name '*-release-*.apk') || exit 1
+
+scp -B -P 1022 -v ${APK_FILES} travis-ci@builds.lfa.one:/repository/testing/all/ || exit 1

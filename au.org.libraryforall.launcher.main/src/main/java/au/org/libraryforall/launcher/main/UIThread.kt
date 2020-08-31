@@ -1,4 +1,4 @@
-package au.org.libraryforall.launcher.app
+package au.org.libraryforall.launcher.main
 
 import android.os.Handler
 import android.os.Looper

@@ -65,4 +65,10 @@ EOF
 
 APK_FILES=$(find . -name '*-release-*.apk') || exit 1
 
+if [ -z "${APK_FILES}" ]
+then
+  echo "No APK files located!"
+  exit 1
+fi
+
 scp -B -P 1022 -v ${APK_FILES} travis-ci@builds.lfa.one:/repository/testing/all/ || exit 1

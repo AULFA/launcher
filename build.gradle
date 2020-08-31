@@ -1,9 +1,9 @@
 buildscript {
-  if ("$gradle.gradleVersion" != "6.0.1") {
-    throw new GradleException("Gradle version 6.0.1 is required (received $gradle.gradleVersion)")
+  if ("$gradle.gradleVersion" != "6.3") {
+    throw new GradleException("Gradle version 6.3 is required (received $gradle.gradleVersion)")
   }
 
-  ext.kotlin_version = "1.3.50"
+  ext.kotlin_version = "1.3.72"
 
   repositories {
     mavenCentral()
@@ -12,24 +12,20 @@ buildscript {
   }
 
   dependencies {
-    classpath 'com.android.tools.build:gradle:3.5.2'
+    classpath 'com.android.tools.build:gradle:4.0.1'
     classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     classpath "digital.wup:android-maven-publish:3.6.3"
-    classpath "io.codearte.gradle.nexus:gradle-nexus-staging-plugin:0.21.1"
-    classpath "com.vanniktech:gradle-android-junit-jacoco-plugin:0.15.0"
-    classpath "biz.aQute.bnd:biz.aQute.bnd.gradle:4.3.1"
+    classpath "biz.aQute.bnd:biz.aQute.bnd.gradle:5.1.2"
   }
 }
 
 plugins {
   id "ru.vyarus.animalsniffer" version "1.5.0"
-  id "io.codearte.nexus-staging" version "0.21.0"
-  id "com.vanniktech.android.junit.jacoco" version "0.15.0"
   id "digital.wup.android-maven-publish" version "3.6.3"
 }
 
 ext {
-  androidBuildToolsVersion = "28.0.3"
+  androidBuildToolsVersion = "29.0.2"
   androidCompileSDKVersion = 28
   androidMinimumSDKVersion = 21
   androidTargetSDKVersion = 28
@@ -65,15 +61,6 @@ ext.libraries = [
   rXJava                  : "io.reactivex.rxjava2:rxjava:2.2.8",
   slf4j                   : "org.slf4j:slf4j-api:1.8.0-beta4",
 ]
-
-apply plugin: "io.codearte.nexus-staging"
-apply plugin: "com.vanniktech.android.junit.jacoco"
-
-nexusStaging {
-  packageGroup = "au.org.libraryforall"
-  numberOfRetries = 32
-  delayBetweenRetriesInMillis = 2000
-}
 
 allprojects {
   group = project.ext["GROUP"]

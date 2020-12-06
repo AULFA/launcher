@@ -13,4 +13,5 @@
     <item>mobi.abcmouse.academy_goo</item>
     <item>com.android.chrome</item>
   </string-array>
+  <string name="launcherTitleLocked">Online Tablet - Teachers</string>
 </resources>

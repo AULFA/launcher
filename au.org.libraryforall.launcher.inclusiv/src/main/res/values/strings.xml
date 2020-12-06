@@ -12,4 +12,5 @@
     <item>com.moodle.moodlemobile</item>
     <item>mobi.abcmouse.academy_goo</item>
   </string-array>
+  <string name="launcherTitleLocked">Offline Tablet - Students</string>
 </resources>

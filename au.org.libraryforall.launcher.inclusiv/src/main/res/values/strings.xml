@@ -11,6 +11,10 @@
     <item>org.sil.bloom.reader</item>
     <item>com.moodle.moodlemobile</item>
     <item>mobi.abcmouse.academy_goo</item>
+    <item>com.google.android.calculator</item>
+    <item>com.eduapp4syria.feedthemonsterENGLISHAUS</item>
+    <item>edu.colorado.phet.androidApp</item>
+    <item>no.leaplearning.launcher</item>
   </string-array>
   <string name="launcherTitleLocked">Offline Tablet - Students</string>
 </resources>

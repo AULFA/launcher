@@ -3,7 +3,6 @@
   <string-array name="launcherPackageWhitelist">
     <item>au.org.libraryforall.reader.offline</item>
     <item>au.org.libraryforall.reader</item>
-    <item>au.org.libraryforall.updater.app</item>
     <item>com.aofl.readingiq.google</item>
     <item>one.lfa.android.grande</item>
     <item>one.lfa.android.laos</item>

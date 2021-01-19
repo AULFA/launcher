@@ -28,6 +28,7 @@ copy()
 }
 
 copy .ci/credentials/lfa-keystore.jks lfa-keystore.jks
+copy .ci/credentials/launcher-password.properties au.org.libraryforall.launcher.main/password.properties
 
 mkdir -p "$HOME/.gradle" ||
   fatal "could not create gradle configuration directory"

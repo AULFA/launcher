@@ -8,10 +8,13 @@
     <item>one.lfa.android.laos</item>
     <item>one.lfa.android.timor</item>
     <item>org.sil.bloom.reader</item>
+    <item>com.moodle.moodlemobile</item>
+    <item>mobi.abcmouse.academy_goo</item>
+    <item>com.android.chrome</item>
     <item>com.google.android.calculator</item>
-    <item>com.eduapp4syria.feedthemonsterENGLISHAUS</item>
-    <item>edu.colorado.phet.androidApp</item>
-    <item>no.leaplearning.launcher</item>
+    <item>com.google.android.deskclock</item>
+    <item>com.google.android.apps.nbu.files</item>
+    <item>at.tomtasche.reader</item>
   </string-array>
-  <string name="launcherTitleLocked">Offline Tablet - Students</string>
+  <string name="launcherTitleLocked">Online Tablet - Teachers</string>
 </resources>

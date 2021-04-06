@@ -1,5 +1,6 @@
 include ':au.org.libraryforall.launcher.app'
 include ':au.org.libraryforall.launcher.inclusiv'
+include ':au.org.libraryforall.launcher.inclusiv_teacher'
 include ':au.org.libraryforall.launcher.installed'
 include ':au.org.libraryforall.launcher.installed.api'
 include ':au.org.libraryforall.launcher.main'

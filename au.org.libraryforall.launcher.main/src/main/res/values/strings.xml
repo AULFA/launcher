@@ -9,6 +9,7 @@
     <item>one.lfa.android.laos</item>
     <item>one.lfa.android.timor</item>
     <item>one.lfa.android.ethiopia</item>
+    <item>one.lfa.android.app.indigenous</item>
     <item>org.libraryforall.accountsconverter</item>
   </string-array>
   <string name="launcherTitleLocked">Select An Application</string>

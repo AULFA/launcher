@@ -56,5 +56,7 @@ android {
 
   defaultConfig {
     buildConfigField "String", "SETTINGS_PASSWORD", "\"${password}\""
+    buildConfigField "String", "VERSION_NAME", "\"${versionName}\""
+    buildConfigField "int", "VERSION_CODE", "${versionCode}"
   }
 }

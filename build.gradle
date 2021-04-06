@@ -1,9 +1,9 @@
 buildscript {
-  if ("$gradle.gradleVersion" != "6.3") {
-    throw new GradleException("Gradle version 6.3 is required (received $gradle.gradleVersion)")
+  if ("$gradle.gradleVersion" != "6.5") {
+    throw new GradleException("Gradle version 6.5 is required (received $gradle.gradleVersion)")
   }
 
-  ext.kotlin_version = "1.3.72"
+  ext.kotlin_version = "1.4.20"
 
   repositories {
     mavenCentral()
@@ -12,10 +12,10 @@ buildscript {
   }
 
   dependencies {
-    classpath 'com.android.tools.build:gradle:4.0.1'
+    classpath 'com.android.tools.build:gradle:4.1.1'
     classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     classpath "digital.wup:android-maven-publish:3.6.3"
-    classpath "biz.aQute.bnd:biz.aQute.bnd.gradle:5.1.2"
+    classpath "biz.aQute.bnd:biz.aQute.bnd.gradle:5.2.0"
   }
 }
 
@@ -29,15 +29,6 @@ ext {
   androidCompileSDKVersion = 28
   androidMinimumSDKVersion = 21
   androidTargetSDKVersion = 28
-
-  if (!project.hasProperty("nexusUsername")) {
-    logger.warn("No nexusUsername property specified: Using an empty value")
-    nexusUsername = ""
-  }
-  if (!project.hasProperty("nexusPassword")) {
-    logger.warn("No nexusPassword property specified: Using an empty value")
-    nexusPassword = ""
-  }
 }
 
 ext.libraries = [
@@ -187,80 +178,6 @@ Automatic-Module-Name: ${POM_AUTOMATIC_MODULE_NAME}
     from "src/main/java", "src/main/resources"
   }
 
-  apply plugin: "digital.wup.android-maven-publish"
-  apply plugin: "signing"
-
-  publishing {
-    publications {
-      basicJar(MavenPublication) {
-
-        switch (POM_PACKAGING) {
-          case "jar":
-            from components.java
-            break
-
-          case "apk":
-            break
-
-          case "aar":
-            from components.android
-            break
-        }
-
-        artifact sourcesJar
-        artifact javadocsJar
-
-        pom {
-          artifactId = POM_ARTIFACT_ID
-          name = POM_NAME
-          packaging = POM_PACKAGING
-          description = POM_DESCRIPTION
-          url = POM_URL
-
-          scm {
-            connection = POM_SCM_CONNECTION
-            developerConnection = POM_SCM_DEV_CONNECTION
-            url = POM_SCM_URL
-          }
-
-          licenses {
-            license {
-              name = POM_LICENCE_NAME
-              url = POM_LICENCE_URL
-            }
-          }
-
-          developers {
-            developer {
-              id = POM_DEVELOPER_ID
-              name = POM_DEVELOPER_NAME
-              email = POM_DEVELOPER_EMAIL
-              url = POM_DEVELOPER_URL
-            }
-          }
-        }
-      }
-    }
-
-    repositories {
-      maven {
-        def releasesRepoUrl = "https://oss.sonatype.org/service/local/staging/deploy/maven2/"
-        def snapshotsRepoUrl = "https://oss.sonatype.org/content/repositories/snapshots/"
-        url = version.endsWith("SNAPSHOT") ? snapshotsRepoUrl : releasesRepoUrl
-
-        credentials(PasswordCredentials) {
-          username nexusUsername
-          password nexusPassword
-        }
-      }
-    }
-  }
-
-  signing {
-    useGpgCmd()
-    sign publishing.publications.basicJar
-  }
-
   repositories {
     mavenCentral()
     mavenLocal()
@@ -269,3 +186,14 @@ Automatic-Module-Name: ${POM_AUTOMATIC_MODULE_NAME}
   }
 }
 
+/**
+ * Empty tasks called by CI. We don't do semantic versioning analysis or linting here yet.
+ */
+
+task verifySemanticVersioning {
+
+}
+
+task ktlint {
+
+}

@@ -4,6 +4,7 @@
   <string-array name="launcherPackageWhitelist">
     <item>au.org.libraryforall.reader</item>
     <item>au.org.libraryforall.reader.offline</item>
+    <item>au.org.libraryforall.elevate.launcher</item>
   </string-array>
   <string name="launcherTitleLocked">Select An Application</string>
   <string name="launcherTitleUnlocked">Unlocked Application List</string>

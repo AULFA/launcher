@@ -13,6 +13,7 @@
     <item>one.lfa.android.app.indigenous</item>
     <item>org.libraryforall.accountsconverter</item>
     <item>org.libraryforall.lfateacherdashboard</item>
+    <item>org.libraryforall.lfastudentdashboard</item>
     <item>org.libraryforall.lfatrainingapp</item>
   </string-array>
   <string name="launcherTitleLocked">Select An Application</string>

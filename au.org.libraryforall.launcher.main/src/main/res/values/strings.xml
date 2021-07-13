@@ -3,6 +3,7 @@
   <string name="launcherAppName">LFA Launcher</string>
   <string-array name="launcherPackageWhitelist">
     <item>au.org.libraryforall.elevate.launcher</item>
+    <item>au.org.libraryforall.feedthemonster.english</item>
     <item>au.org.libraryforall.reader.offline</item>
     <item>au.org.libraryforall.reader</item>
     <item>au.org.libraryforall.updater.app</item>
@@ -15,6 +16,7 @@
     <item>org.libraryforall.lfateacherdashboard</item>
     <item>org.libraryforall.lfastudentdashboard</item>
     <item>org.libraryforall.lfatrainingapp</item>
+    <item>org.libraryforall.fileserveapp</item>
   </string-array>
   <string name="launcherTitleLocked">Select An Application</string>
   <string name="launcherTitleUnlocked">Unlocked Application List</string>

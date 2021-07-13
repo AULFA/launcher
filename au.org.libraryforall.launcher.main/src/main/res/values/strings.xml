@@ -16,6 +16,7 @@
     <item>org.libraryforall.lfateacherdashboard</item>
     <item>org.libraryforall.lfastudentdashboard</item>
     <item>org.libraryforall.lfatrainingapp</item>
+    <item>org.libraryforall.fileserveapp</item>
   </string-array>
   <string name="launcherTitleLocked">Select An Application</string>
   <string name="launcherTitleUnlocked">Unlocked Application List</string>

@@ -17,6 +17,7 @@
     <item>org.libraryforall.lfastudentdashboard</item>
     <item>org.libraryforall.lfatrainingapp</item>
     <item>org.libraryforall.fileserveapp</item>
+    <item>org.sil.bloom.reader</item>
   </string-array>
   <string name="launcherTitleLocked">Select An Application</string>
   <string name="launcherTitleUnlocked">Unlocked Application List</string>

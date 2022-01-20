@@ -15,6 +15,7 @@
     <item>com.google.android.deskclock</item>
     <item>com.google.android.apps.nbu.files</item>
     <item>at.tomtasche.reader</item>
+    <item>org.onebillion.onecourse.eassessment.standalone</item>
   </string-array>
   <string name="launcherTitleLocked">Online Tablet - Teachers</string>
 </resources>

@@ -14,9 +14,13 @@
     <item>one.lfa.android.app.indigenous</item>
     <item>one.lfa.android.app.solomon</item>
     <item>one.lfa.android.app.kenya</item>
+    <item>one.lfa.android.app.myanmar</item>
+    <item>one.lfa.android.app.vietnam</item>
     <item>org.libraryforall.accountsconverter</item>
     <item>org.libraryforall.lfateacherdashboard</item>
+    <item>org.libraryforall.lfateacherdashboard.vietnam</item>
     <item>org.libraryforall.lfastudentdashboard</item>
+    <item>org.libraryforall.lfastudentdashboard.vietnam</item>
     <item>org.libraryforall.lfatrainingapp</item>
     <item>org.libraryforall.fileserveapp</item>
     <item>org.sil.bloom.reader</item>

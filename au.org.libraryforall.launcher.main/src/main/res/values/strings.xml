@@ -6,6 +6,7 @@
     <item>au.org.libraryforall.feedthemonster.english</item>
     <item>au.org.libraryforall.reader.offline</item>
     <item>au.org.libraryforall.reader</item>
+    <item>org.libraryforall.reader</item>
     <item>au.org.libraryforall.updater.app</item>
     <item>one.lfa.android.grande</item>
     <item>one.lfa.android.laos</item>
@@ -28,7 +29,6 @@
     <item>net.gcompris.full</item>
     <item>org.scratch</item>
     <item>org.scratchjr.android</item>
-    <item>org.libraryforall.reader</item>
   </string-array>
   <string name="launcherTitleLocked">Select An Application</string>
   <string name="launcherTitleUnlocked">Unlocked Application List</string>

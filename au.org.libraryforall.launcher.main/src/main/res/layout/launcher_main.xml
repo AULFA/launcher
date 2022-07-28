@@ -5,12 +5,7 @@
   android:layout_width="match_parent"
   android:layout_height="match_parent">
 
-  <ImageView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:scaleType="centerCrop"
-    android:alpha="0.1"
-    android:src="@drawable/books"/>
+  <include layout="@layout/launcher_layout_logos" />
 
   <androidx.constraintlayout.widget.ConstraintLayout
     android:id="@+id/launcherSpaceTop"

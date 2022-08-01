@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.widget.PopupMenu
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import au.org.libraryforall.launcher.installed.api.InstalledPackage
@@ -16,6 +17,8 @@ class LauncherAppListAdapter(
   private val context: Activity,
   private val applications: List<InstalledPackage>,
   private val onSelect: (InstalledPackage) -> Unit,
+  private val onDelete: (InstalledPackage) -> Unit,
+  private val showPopupMenu: Boolean,
   private val showPackageId: Boolean)
   : RecyclerView.Adapter<LauncherAppListAdapter.ViewHolder>() {
 
@@ -50,6 +53,25 @@ class LauncherAppListAdapter(
     val item = this.applications[position]
 
     holder.parent.setOnClickListener { this.onSelect.invoke(item) }
+    holder.parent.setOnLongClickListener {
+      if (! this.showPopupMenu) {
+        return@setOnLongClickListener false
+      }
+
+      val pop= PopupMenu(context, it)
+      pop.inflate(R.menu.launcher_item_menu)
+
+      pop.setOnMenuItemClickListener { menuItem ->
+        when(menuItem.itemId) {
+          R.id.launcher_item_menu_delete -> {
+            this.onDelete.invoke(item)
+          }
+        }
+        true
+      }
+      pop.show()
+      true
+    }
     holder.title.text = item.name
     holder.icon.setImageDrawable(this.iconCache.get(item.id) { loadIcon(item) })
 

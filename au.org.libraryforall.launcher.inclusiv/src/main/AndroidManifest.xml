@@ -3,6 +3,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
   package="au.org.libraryforall.launcher.inclusiv">
 
+  <uses-permission android:name="android.permission.REQUEST_DELETE_PACKAGES" />
+
   <application
     android:label="LFA Launcher Inclusiv"
     android:icon="@mipmap/ic_launcher"

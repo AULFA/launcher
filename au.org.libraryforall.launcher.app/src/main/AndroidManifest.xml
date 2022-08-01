@@ -3,6 +3,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
   package="au.org.libraryforall.launcher.app">
 
+  <uses-permission android:name="android.permission.REQUEST_DELETE_PACKAGES" />
+
   <application
     android:label="@string/launcherAppName"
     android:icon="@mipmap/ic_launcher"

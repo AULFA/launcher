@@ -1,11 +1,15 @@
 package au.org.libraryforall.launcher.main
 
+import android.app.Activity
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -22,10 +26,24 @@ class LauncherViewController(arguments: Bundle) : Controller(arguments) {
     : this(bundleArguments(parameters))
 
   companion object {
+    private const val UNINSTALL_REQUEST_CODE = 1234
+
     private fun bundleArguments(parameters: LauncherViewControllerParameters): Bundle {
       val bundle = Bundle()
       bundle.putSerializable("parameters", parameters)
       return bundle
+    }
+  }
+
+  override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+    super.onActivityResult(requestCode, resultCode, data)
+
+    if (requestCode == UNINSTALL_REQUEST_CODE) {
+      when (resultCode) {
+        Activity.RESULT_OK -> Toast.makeText(activity, R.string.launcherUninstallSuccess, Toast.LENGTH_SHORT).show()
+        Activity.RESULT_CANCELED -> Toast.makeText(activity, R.string.launcherUninstallCanceled, Toast.LENGTH_SHORT).show()
+        else -> Toast.makeText(activity, R.string.launcherUninstallFail, Toast.LENGTH_SHORT).show()
+      }
     }
   }
 
@@ -75,6 +93,8 @@ class LauncherViewController(arguments: Bundle) : Controller(arguments) {
         context = this.activity!!,
         applications = this.applicationList,
         onSelect = this::onSelectedPackage,
+        onDelete = this::onDeletePackage,
+        showPopupMenu = this.parameters.unlocked,
         showPackageId = this.parameters.unlocked)
 
     this.recyclerView.setHasFixedSize(true)
@@ -96,6 +116,10 @@ class LauncherViewController(arguments: Bundle) : Controller(arguments) {
 
   private fun onSelectedPackage(installedPackage: InstalledPackage) {
     this.launch(installedPackage.id)
+  }
+
+  private fun onDeletePackage(installedPackage: InstalledPackage) {
+    this.delete(installedPackage.id)
   }
 
   private fun onPackageEvent() {
@@ -173,5 +197,12 @@ class LauncherViewController(arguments: Bundle) : Controller(arguments) {
         .create()
         .show()
     }
+  }
+
+  private fun delete(packageName: String) {
+    val intent = Intent(Intent.ACTION_UNINSTALL_PACKAGE)
+    intent.data = Uri.parse("package:${packageName}")
+    intent.putExtra(Intent.EXTRA_RETURN_RESULT, true)
+    startActivityForResult(intent, UNINSTALL_REQUEST_CODE)
   }
 }

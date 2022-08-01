@@ -33,4 +33,8 @@
   </string-array>
   <string name="launcherTitleLocked">Select An Application</string>
   <string name="launcherTitleUnlocked">Unlocked Application List</string>
+  <string name="launcherItemDelete">Uninstall</string>
+  <string name="launcherUninstallSuccess">Application uninstalled</string>
+  <string name="launcherUninstallCanceled">Uninstall cancelled</string>
+  <string name="launcherUninstallFail">Could not uninstall the application</string>
 </resources>

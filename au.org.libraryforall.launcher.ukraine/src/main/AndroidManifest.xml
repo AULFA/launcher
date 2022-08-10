@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+  package="au.org.libraryforall.launcher.ukraine">
+
+  <uses-permission android:name="android.permission.REQUEST_DELETE_PACKAGES" />
+
+  <application
+    android:label="LFA Launcher Ukraine"
+    android:icon="@mipmap/ic_launcher"
+    android:name="au.org.libraryforall.launcher.main.LauncherApplication">
+    <activity
+      android:name="au.org.libraryforall.launcher.main.LauncherActivity"
+      android:exported="true"
+      android:theme="@style/LauncherTheme">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+        <category android:name="android.intent.category.HOME" />
+        <category android:name="android.intent.category.DEFAULT" />
+      </intent-filter>
+    </activity>
+  </application>
+
+</manifest>

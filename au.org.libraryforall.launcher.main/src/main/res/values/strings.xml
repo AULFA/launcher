@@ -27,9 +27,6 @@
     <item>org.libraryforall.lfatrainingapp</item>
     <item>org.libraryforall.fileserveapp</item>
     <item>org.sil.bloom.reader</item>
-    <item>net.gcompris.full</item>
-    <item>org.scratch</item>
-    <item>org.scratchjr.android</item>
   </string-array>
   <string name="launcherTitleLocked">Select An Application</string>
   <string name="launcherTitleUnlocked">Unlocked Application List</string>

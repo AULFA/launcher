@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<resources>
+  <string-array name="launcherPackageWhitelist">
+    <item>au.org.libraryforall.elevate.launcher</item>
+    <item>au.org.libraryforall.reader.offline</item>
+    <item>au.org.libraryforall.reader</item>
+    <item>org.libraryforall.reader</item>
+    <item>au.org.libraryforall.updater.ukraine</item>
+    <item>one.lfa.android.grande</item>
+    <item>org.libraryforall.lfateacherdashboard</item>
+    <item>org.libraryforall.lfastudentdashboard</item>
+    <item>org.libraryforall.lfatrainingapp</item>
+    <item>org.libraryforall.fileserveapp</item>
+    <item>org.sil.bloom.reader</item>
+    <item>com.eduapp4syria.feedthemonsterUkranian</item>
+    <item>net.gcompris.full</item>
+    <item>ua.net.e.school</item>
+    <item>com.moodle.workplace</item>
+    <item>com.android.chrome</item>
+    <item>com.google.android.apps.translate</item>
+    <item>com.google.android.calculator</item>
+    <item>com.google.android.calculator2</item>
+    <item>uk.sci.edtech.assesment</item>
+  </string-array>
+  <string name="launcherTitleLocked">Виберіть програму</string>
+  <string name="launcherTitleUnlocked">Розблокований список програм</string>
+  <string name="launcherItemDelete">Видалити</string>
+  <string name="launcherUninstallSuccess">Програму видалено</string>
+  <string name="launcherUninstallCanceled">Видалення скасовано</string>
+  <string name="launcherUninstallFail">Не вдалося видалити програму</string>
+</resources>

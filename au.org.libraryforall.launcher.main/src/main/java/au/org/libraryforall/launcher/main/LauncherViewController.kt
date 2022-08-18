@@ -56,6 +56,7 @@ class LauncherViewController(arguments: Bundle) : Controller(arguments) {
 
   private var installedPackageEvents: Disposable? = null
   private val applicationList: MutableList<InstalledPackage> = mutableListOf()
+  private val visibleAppList: MutableList<InstalledPackage> = mutableListOf()
 
   private val parameters: LauncherViewControllerParameters =
     arguments.getSerializable("parameters") as LauncherViewControllerParameters
@@ -68,7 +69,10 @@ class LauncherViewController(arguments: Bundle) : Controller(arguments) {
   private lateinit var listAdapter: LauncherAppListAdapter
   private lateinit var recyclerView: RecyclerView
   private lateinit var settings: ImageView
+  private lateinit var updater: ImageView
   private lateinit var version: TextView
+
+  private var showUpdaterIcon = false
 
   override fun onCreateView(
     inflater: LayoutInflater,
@@ -79,6 +83,12 @@ class LauncherViewController(arguments: Bundle) : Controller(arguments) {
     this.recyclerView = view.findViewById(R.id.launcherListView)
     this.version = view.findViewById(R.id.launcherVersion)
     this.settings = view.findViewById(R.id.launcherSettings)
+    this.updater = view.findViewById(R.id.launcherUpdater)
+
+    if (this.updater.visibility == View.VISIBLE) {
+      showUpdaterIcon = true
+    }
+
     return view
   }
 
@@ -91,7 +101,7 @@ class LauncherViewController(arguments: Bundle) : Controller(arguments) {
     this.listAdapter =
       LauncherAppListAdapter(
         context = this.activity!!,
-        applications = this.applicationList,
+        applications = this.visibleAppList,
         onSelect = this::onSelectedPackage,
         onDelete = this::onDeletePackage,
         showPopupMenu = this.parameters.unlocked,
@@ -101,6 +111,8 @@ class LauncherViewController(arguments: Bundle) : Controller(arguments) {
     this.recyclerView.layoutManager = GridLayoutManager(view.context, 2)
     this.recyclerView.adapter = this.listAdapter
     (this.recyclerView.itemAnimator as SimpleItemAnimator).supportsChangeAnimations = false
+
+    this.updater.setOnClickListener { this.launchUpdater() }
 
     if (!this.parameters.unlocked) {
       this.title.text = this.resources!!.getString(R.string.launcherTitleLocked)
@@ -124,13 +136,19 @@ class LauncherViewController(arguments: Bundle) : Controller(arguments) {
 
   private fun onPackageEvent() {
     UIThread.execute {
+      // Filter the installed packages using the whitelist for this app version.
+      // Hide the LFA Updater app if this version of the app shows the "update" button on the bottom right.
       val packageList = this.installed.packages()
         .values
         .filter { installedPackage -> this.isAllowed(installedPackage) }
+        .filter { installedPackage -> !showUpdaterIcon || !installedPackage.id.contains("au.org.libraryforall.updater") }
         .sortedBy { installedPackage -> installedPackage.name }
 
       this.applicationList.clear()
-      this.applicationList.addAll(packageList)
+      this.applicationList.addAll(this.installed.packages().values)
+
+      this.visibleAppList.clear()
+      this.visibleAppList.addAll(packageList)
       this.listAdapter.notifyDataSetChanged()
     }
   }
@@ -147,6 +165,12 @@ class LauncherViewController(arguments: Bundle) : Controller(arguments) {
     super.onDetach(view)
 
     this.installedPackageEvents?.dispose()
+  }
+
+  private fun launchUpdater() {
+    // Launch the LFA Updater app if it's installed
+    this.applicationList.firstOrNull { installedPackage -> installedPackage.id.contains("au.org.libraryforall.updater") }
+      ?.let { launch(it.id) }
   }
 
   private fun showPasswordDialog() {

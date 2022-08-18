@@ -6,7 +6,7 @@
   <uses-permission android:name="android.permission.REQUEST_DELETE_PACKAGES" />
 
   <application
-    android:label="LFA Launcher Ukraine"
+    android:label="Update Apps"
     android:icon="@mipmap/ic_launcher"
     android:name="au.org.libraryforall.launcher.main.LauncherApplication">
     <activity

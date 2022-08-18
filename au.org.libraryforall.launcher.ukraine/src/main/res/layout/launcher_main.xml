@@ -77,8 +77,7 @@
       android:tint="@color/mainColorLighter"
       app:layout_constraintEnd_toStartOf="@id/launcherSettings"
       app:layout_constraintTop_toTopOf="parent"
-      app:srcCompat="@drawable/updater"
-      android:visibility="gone" />
+      app:srcCompat="@drawable/updater" />
 
     <ImageView
       android:id="@+id/launcherSettings"

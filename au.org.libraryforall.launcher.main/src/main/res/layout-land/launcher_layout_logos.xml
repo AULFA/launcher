@@ -11,12 +11,4 @@
         android:scaleType="centerInside"
         android:alpha="0.08"
         android:src="@drawable/logo_lfa"/>
-    <ImageView
-        android:layout_marginLeft="32dp"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:scaleType="centerInside"
-        android:alpha="0.08"
-        android:src="@drawable/logo_sca"/>
 </LinearLayout>

@@ -13,6 +13,7 @@
     <item>one.lfa.android.laos</item>
     <item>one.lfa.android.timor</item>
     <item>one.lfa.android.ethiopia</item>
+    <item>one.lfa.android.app.fiji</item>
     <item>one.lfa.android.app.indigenous</item>
     <item>one.lfa.android.app.solomon</item>
     <item>one.lfa.android.app.kenya</item>
@@ -26,6 +27,7 @@
     <item>org.libraryforall.lfastudentdashboard.myanmar</item>
     <item>org.libraryforall.lfatrainingapp</item>
     <item>org.libraryforall.fileserveapp</item>
+    <item>com.google.android.apps.accessibility.auditor</item>
     <item>org.sil.bloom.reader</item>
   </string-array>
   <string name="launcherTitleLocked">Select An Application</string>

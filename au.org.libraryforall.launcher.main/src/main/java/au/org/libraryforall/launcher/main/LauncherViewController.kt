@@ -112,11 +112,11 @@ class LauncherViewController(arguments: Bundle) : Controller(arguments) {
     this.recyclerView.adapter = this.listAdapter
     (this.recyclerView.itemAnimator as SimpleItemAnimator).supportsChangeAnimations = false
 
-    this.updater.setOnClickListener { this.launchUpdater() }
+    this.updater.setOnClickListener { this.showUpdaterPasswordDialog() }
 
     if (!this.parameters.unlocked) {
       this.title.text = this.resources!!.getString(R.string.launcherTitleLocked)
-      this.settings.setOnClickListener { this.showPasswordDialog() }
+      this.settings.setOnClickListener { this.showSettingsPasswordDialog() }
     } else {
       this.title.text = this.resources!!.getString(R.string.launcherTitleUnlocked)
       this.settings.visibility = View.INVISIBLE
@@ -167,13 +167,41 @@ class LauncherViewController(arguments: Bundle) : Controller(arguments) {
     this.installedPackageEvents?.dispose()
   }
 
+  private fun showUpdaterPasswordDialog() {
+    val activity =
+            this.activity!!
+    val layoutInflater =
+            activity.layoutInflater
+    val view =
+            layoutInflater.inflate(R.layout.launcher_password, null)
+    val text =
+            view.findViewById<TextInputEditText>(R.id.launcherPasswordText)
+
+    AlertDialog.Builder(activity)
+            .setView(view)
+            .setPositiveButton("Enter") { _, _ ->
+              if (checkPassword(text.editableText.toString())) {
+                launchUpdater();
+              } else {
+                AlertDialog.Builder(activity)
+                        .setIcon(android.R.drawable.ic_dialog_alert)
+                        .setTitle("Wrong!")
+                        .setMessage("Incorrect password")
+                        .create()
+                        .show()
+              }
+            }
+            .create()
+            .show()
+  }
+
   private fun launchUpdater() {
     // Launch the LFA Updater app if it's installed
     this.applicationList.firstOrNull { installedPackage -> installedPackage.id.contains("au.org.libraryforall.updater") }
       ?.let { launch(it.id) }
   }
 
-  private fun showPasswordDialog() {
+  private fun showSettingsPasswordDialog() {
     val activity =
       this.activity!!
     val layoutInflater =

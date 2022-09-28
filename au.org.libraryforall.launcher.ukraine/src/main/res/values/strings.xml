@@ -21,6 +21,12 @@
     <item>com.google.android.calculator</item>
     <item>com.android.calculator2</item>
     <item>uk.sci.edtech.assesment</item>
+    <item>com.adobe.reader</item>
+    <item>com.warchildholland.cantwaittolearn</item>
+    <!-- == Links to the Ukraine gov and edu websites == -->
+    <item>com.google.enterprise.webapp.xc30c44b6fd071dd3</item>
+    <item>com.google.enterprise.webapp.xd6307573ef4b86cd</item>
+    <!-- ==== -->
   </string-array>
   <string name="launcherTitleLocked">Виберіть програму</string>
   <string name="launcherTitleUnlocked">Розблокований список програм</string>

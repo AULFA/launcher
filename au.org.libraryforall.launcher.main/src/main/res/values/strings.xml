@@ -6,6 +6,7 @@
     <item>au.org.libraryforall.feedthemonster.english</item>
     <item>au.org.libraryforall.reader.offline</item>
     <item>au.org.libraryforall.reader</item>
+    <item>org.libraryforall.reader.ouryarning</item>
     <item>org.libraryforall.reader</item>
     <item>au.org.libraryforall.updater.app</item>
     <item>au.org.libraryforall.updater.ukraine</item>
@@ -15,6 +16,7 @@
     <item>one.lfa.android.timor</item>
     <item>one.lfa.android.ethiopia</item>
     <item>one.lfa.android.app.fiji</item>
+    <item>one.lfa.android.app.globalenglish</item>
     <item>one.lfa.android.app.indigenous</item>
     <item>one.lfa.android.app.solomon</item>
     <item>one.lfa.android.app.kenya</item>
@@ -30,6 +32,7 @@
     <item>org.libraryforall.fileserveapp</item>
     <item>com.google.android.apps.accessibility.auditor</item>
     <item>org.sil.bloom.reader</item>
+    <item>com.secret6.HopeTownHero</item>
   </string-array>
   <string name="launcherTitleLocked">Select An Application</string>
   <string name="launcherTitleUnlocked">Unlocked Application List</string>

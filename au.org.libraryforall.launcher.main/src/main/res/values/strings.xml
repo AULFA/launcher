@@ -34,6 +34,7 @@
     <item>com.google.android.apps.accessibility.auditor</item>
     <item>org.sil.bloom.reader</item>
     <item>com.secret6.HopeTownHero</item>
+    <item>com.eduapp4syria.feedthemonsterENGLISHAUS</item>
   </string-array>
   <string name="launcherTitleLocked">Select An Application</string>
   <string name="launcherTitleUnlocked">Unlocked Application List</string>
